@@ -1,0 +1,2 @@
+# Exclude python virtual environment folder
+.env/
