@@ -1,0 +1,3 @@
+[submodule "projects/ticky-ticky"]
+	path = projects/ticky-ticky
+	url = git@github.com:shanek21/ticky-ticky.git

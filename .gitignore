@@ -1,2 +1,5 @@
 # Exclude python virtual environment folder
 .env/
+
+# Exclude ipynb checkpoints
+**/.ipynb_checkpoints
