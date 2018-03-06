@@ -1,5 +1,8 @@
-# Exclude python virtual environment folder
+# vim buffer files
+*.swp
+
+# python virtual environment folder
 .env/
 
-# Exclude ipynb checkpoints
+# ipynb checkpoints
 **/.ipynb_checkpoints
