@@ -2,7 +2,7 @@
 *.swp
 
 # python virtual environment folder
-.env/
+env/
 
 # ipynb checkpoints
 **/.ipynb_checkpoints
