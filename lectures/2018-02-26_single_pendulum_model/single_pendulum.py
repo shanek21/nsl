@@ -14,22 +14,25 @@ def derivs(x, t, g):
 
     theta, omega = x # angle, angular velocity
 
-    # d theta/dt = omega, d omega/dt = -sin(theta) - 2*g*omega^2
-    dxdt = [omega, -math.sin(theta) - 2*g*omega]
+    dxdt = []
+    dxdt.append(omega) # d theta/dt = omega
+    dxdt.append(-math.sin(theta) - 2*g*omega*abs(omega)) # d omega/dt = -sin(theta) - 2*g*omega^2
 
     return dxdt
 
 
+# Calculate solution
 start = 0
-stop = 200
+stop = 350
 samples_per_second = 100
 num_samples = (stop - start) * samples_per_second
 time = np.linspace(start, stop, num_samples)
-x0 = [1, 0] # initial condition [angle, angular velocity]
-g = 0.02 # linear viscous damping coefficient
+x0 = [0.75, 0] # initial condition [angle, angular velocity]
+g = 0.000858 # linear viscous damping coefficient
 sol = odeint(derivs, x0, time, args=(g,))
 angle, angular_velocity = sol.T
 
+# Plot
 plt.plot(time, angle)
 plt.plot(time, angular_velocity)
 plt.title('Nonlinear Oscillator')
